@@ -11,7 +11,9 @@ import sys
 reduceDict ={}
 for line in sys.stdin:
     line = line.strip()
-    Origin, Cancelled = line.split(",")
+    newline = line.split(",")
+    Origin = newline[0]
+    Cancelled = newline[1]
     Cancelled = int(Cancelled)
     if Origin not in reduceDict:
         reduceDict[Origin] = {"Total": 0, "Cancelled": 0}
